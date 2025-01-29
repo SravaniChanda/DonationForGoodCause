@@ -1,0 +1,136 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.navbar {
+
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:20px;
+    margin-left:50px;
+    margin-right:50px;
+
+}
+
+.navbar-items {
+    
+    text-decoration: none;
+}
+
+.navbar-items li {
+    display: inline-block;
+    padding: 0px 20px;  
+}
+
+.navbar-items li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.navbar-items li a:hover {
+    color: orange;
+}
+.body-bg {
+    background-color: rgb(194, 241, 241);
+}
+.flex {
+    display:flex;
+}
+.image {
+        margin-left: 140px;
+        margin-top: 80px;
+        height:400px;
+}
+/* Wrapper Styles */
+.wrapper {
+    background-color: #fff;
+    width: 400px;
+    padding: 40px 30px;
+    margin: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-left: 100px;
+}
+
+.wrapper h1 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Input Box Styles */
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid rgba(32, 136, 136, 0.5);
+    border-radius: 30px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-box input::placeholder {
+    color: #333;
+}
+
+.input-box select {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="14" height="10" xmlns="http://www.w3.org/2000/svg"><path fill="%23888" d="M7 10L0 0h14z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 12px;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: #208888;
+}
+
+.custom-donation-type {
+    display: none;
+}
+
+
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #208888;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff7f00;
+}
+

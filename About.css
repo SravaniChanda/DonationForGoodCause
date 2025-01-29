@@ -1,0 +1,77 @@
+.navbar {
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:20px;
+    margin-left:50px;
+    margin-right:50px;
+
+}
+
+.navbar-items {
+    
+    text-decoration: none;
+}
+
+.navbar-items li {
+    display: inline-block;
+    padding: 0px 20px;  
+}
+
+.navbar-items li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.navbar-items li a:hover {
+    color: orange;
+}
+.what-we-do {
+    background-color: rgb(194, 241, 241);
+    padding:50px;
+    padding-top:80px;
+    padding-bottom: 80px;
+  }
+  .manage-title {
+    font-size:30px;
+    margin-bottom:40px;
+  }
+  .img {
+    margin-left:30px;
+  }
+  .para-div {
+    margin-left:50px;
+    margin-right:30px;
+  }
+  .para {
+    text-align: justify;
+    font-size:20px;
+  }
+  .flex {
+    display: flex;
+  }
+  .footer {
+    background-color: black;
+    margin:0;
+    height:100px;
+    padding: 20px;
+  }
+  .footer p {
+    
+    color:white;
+    text-align: center;
+    width:100%;
+  }
+.mission {
+    padding-top: 20px;
+    padding-left: 25px;
+    display: flex;
+}  
+.m-img {
+  margin-left:60px;
+}

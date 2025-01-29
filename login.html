@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="logincss.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="body-bg">
+    <div>
+        <nav class="navbar">
+            <h1 class="heading">Donation For Good Cause</h1>
+            <ul class="navbar-items">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="flex">
+        <div class="image">
+            <img src="donation.jpg">
+            <h1 style="margin-left:30px;margin-top:30px;">Ready to Give or Receive?<br>Log In to Your Account..</h1>
+        </div>
+        <div class="wrapper">      
+            <form id="loginForm" action="login.php" method="POST">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" id="email" name="emailOrId" placeholder="User Id/Email id" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="forgot-password-direction"><a href="forgot_password.php" class="forgot-password">Forgot password?</a></div>
+                <div class="button">
+                    <button type="submit" class="btn" style="color:white;font-weight: bold;">Login</button>
+                </div>
+                <div class="register-link">
+                    <p>Don't have an account?
+                        <a class="register" href="registerAsDonor.html">Sign Up</a>
+                    </p>
+                </div>
+            </form> 
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright@2025 Donation For Cause</p>
+        <p>All rights reserved</p>
+    </div>
+</body>
+</html>

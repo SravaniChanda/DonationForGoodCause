@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="donatecss.css">
+    <style>
+        .input-box {
+            margin-bottom: 15px;
+        }
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-box input,
+        .input-box select,
+        .input-box textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body class="body-bg">
+    <div>
+        <nav class="navbar">
+            <h1 class="heading">Donation For Good Cause</h1>
+            <ul class="navbar-items">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="donor_profile.php">Profile</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="flex">
+        <div>
+            <img class="image" src="donation.jpg" alt="Donation Image">
+        </div>
+
+        <div class="wrapper">
+            <form id="donationForm" action="submitDonation.php" method="POST">
+                <h1>Donate</h1>
+
+                <!-- Common Fields -->
+                <div class="input-box">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="address" id="address" placeholder="Address" required>
+                </div>
+                <div class="input-box">
+                    <input type="tel" name="contact_number" id="contact_number" placeholder="Contact Number" required>
+                </div>
+
+                <!-- Donation Type Selection -->
+                <div class="input-box">
+                    <select name="donation_type" id="donation_type" required>
+                        <option value="" disabled selected>Select Type of Donation</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Fund">Fund</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Stationary">Stationary</option>
+                    </select>
+                </div>
+
+                <!-- Fund Donation Fields -->
+                <div class="input-box hidden" id="qrScannerBox">
+                    <label>Scan QR Code</label>
+                    <p>Use your PhonePe app to scan the QR code below:</p>
+                    <div style="text-align: center;">
+                        <img src="qrCode.jpg" alt="PhonePe QR Code" width="200" height="200">
+                    </div>
+                </div>
+                <div class="input-box hidden" id="amountBox">
+                    <label>Enter Amount</label>
+                    <input type="number" name="amount" id="amount" placeholder="Enter amount">
+                </div>
+
+                <!-- Clothes Donation Fields -->
+                <div class="input-box hidden" id="clothesOptionsBox">
+                    <label>Donation for:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="for_old_people" id="for_old_people">
+                        <label for="for_old_people">Old People</label>
+
+                        <input type="checkbox" name="for_children" id="for_children">
+                        <label for="for_children">Children</label>
+                    </div>
+                </div>
+                <div class="input-box hidden" id="pairsOldBox">
+                    <label>Number of pairs for Old People</label>
+                    <input type="number" name="pairs_old" id="pairs_old" placeholder="Enter number of pairs" min="1">
+                </div>
+                <div class="input-box hidden" id="pairsChildrenBox">
+                    <label>Number of pairs for Children</label>
+                    <input type="number" name="pairs_children" id="pairs_children" placeholder="Enter number of pairs" min="1">
+                </div>
+
+                <!-- Food Donation Fields -->
+                <div class="input-box hidden" id="foodOccasionBox">
+                    <label>Occasion</label>
+                    <input type="text" name="food_occasion" id="food_occasion" placeholder="Enter occasion">
+                </div>
+                <div class="input-box hidden" id="foodItemsBox">
+                    <label>Food Items</label>
+                    <textarea name="food_items" id="food_items" rows="4" placeholder="Describe the food items"></textarea>
+                </div>
+                <div class="input-box hidden" id="foodQuantityBox">
+                    <label>Quantity</label>
+                    <input type="number" name="food_quantity" id="food_quantity" placeholder="Enter the quantity" min="1">
+                </div>
+
+                <!-- Groceries Donation Fields -->
+                <div class="input-box hidden" id="groceriesDescriptionBox">
+                    <label>Groceries Description</label>
+                    <textarea name="groceries_description" id="groceries_description" rows="4" placeholder="Describe the groceries"></textarea>
+                </div>
+
+                <!-- Stationary Donation Fields -->
+                <div class="input-box hidden" id="stationaryDescriptionBox">
+                    <label>Stationary Description</label>
+                    <textarea name="stationary_description" id="stationary_description" rows="4" placeholder="Describe the stationary"></textarea>
+                </div>
+
+                <div class="button">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const donationTypeSelect = document.getElementById('donation_type');
+        const allConditionalFields = [
+            'qrScannerBox', 'amountBox', // Fund fields
+            'clothesOptionsBox', 'pairsOldBox', 'pairsChildrenBox', // Clothes fields
+            'foodOccasionBox', 'foodItemsBox', 'foodQuantityBox', // Food fields
+            'groceriesDescriptionBox', // Groceries field
+            'stationaryDescriptionBox' // Stationary field
+        ];
+    
+        const conditionalFields = {
+            Fund: ['qrScannerBox', 'amountBox'],
+            Clothes: ['clothesOptionsBox'], // Initial clothes field
+            Food: ['foodOccasionBox', 'foodItemsBox', 'foodQuantityBox'],
+            Groceries: ['groceriesDescriptionBox'],
+            Stationary: ['stationaryDescriptionBox']
+        };
+    
+        donationTypeSelect.addEventListener('change', function () {
+            // Hide all fields
+            allConditionalFields.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.add('hidden');
+                }
+            });
+    
+            // Show fields for the selected donation type
+            const selectedFields = conditionalFields[this.value] || [];
+            selectedFields.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.remove('hidden');
+                }
+            });
+        });
+    
+        // Handle Clothes Checkboxes
+        const forOldPeopleCheckbox = document.getElementById('for_old_people');
+        const forChildrenCheckbox = document.getElementById('for_children');
+        const pairsOldBox = document.getElementById('pairsOldBox');
+        const pairsChildrenBox = document.getElementById('pairsChildrenBox');
+    
+        forOldPeopleCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                pairsOldBox.classList.remove('hidden');
+            } else {
+                pairsOldBox.classList.add('hidden');
+            }
+        });
+    
+        forChildrenCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                pairsChildrenBox.classList.remove('hidden');
+            } else {
+                pairsChildrenBox.classList.add('hidden');
+            }
+        });
+    </script>
+    
+</body>
+</html>

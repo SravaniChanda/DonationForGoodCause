@@ -1,0 +1,98 @@
+
+.navbar {
+
+    padding: 10px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:20px;
+    margin-left:50px;
+    margin-right:50px;
+
+}
+
+.navbar-items {
+    
+    text-decoration: none;
+}
+
+.navbar-items li {
+    display: inline-block;
+    padding: 0px 20px;  
+}
+
+.navbar-items li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.navbar-items li a:hover {
+    color: orange;
+}
+.title {
+    text-align: center;
+    font-size:44px;
+    color:rgb(150, 5, 5);
+    padding: 8px 12px;
+    position: absolute;
+    top: 80px;
+    width: 100%;   
+}
+
+.body-bg {
+    background-color: rgb(194, 241, 241);
+}
+
+.wrapper-AD {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-AD h1 {
+    text-align: center;
+    color: #008080;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+#donationsList {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.donation-item {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+}
+
+.donation-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.donation-item p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.donation-item p strong {
+    color: #008080;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 20px 0;
+}
